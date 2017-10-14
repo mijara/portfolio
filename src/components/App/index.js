@@ -1,23 +1,52 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './style.css';
 import {HashRouter, Route, Switch} from "react-router-dom";
 import Landing from "../Landing";
-import GoRust from "../GoRust";
-import BasicGit from "../BasicGit";
-import Body from "../Body";
+import {connect} from "react-redux";
+import {fetchSections} from "../../actions";
+import Section from "../Section";
+import Document from "../Document";
+import Body from '../Body';
 
-export default class App extends Component {
+export const parseLink = (link) => {
+  if (link.startsWith('self://')) {
+    return `#${link.substring(7)}`
+  }
+  return link;
+};
+
+class App extends Component {
+  componentWillMount() {
+    this.props.fetchSections();
+  }
+
   render() {
+    const {meta} = this.props;
+
     return (
       <HashRouter>
-        <Switch>
-          <Route path="/s/gorust"
-                 render={() => <Body><GoRust/></Body>}/>
-          <Route path="/s/basicgit"
-                 render={() => <Body><BasicGit/></Body>}/>
-          <Route component={Landing}/>
-        </Switch>
+        <Body title={meta.title} subtext={meta.subtext}>
+        {
+          this.props.loaded ?
+            <Switch>
+              <Route path="/s/:slug" component={Section}/>
+              <Route path="/d/:slug" component={Document}/>
+              <Route component={Landing}/>
+            </Switch>
+            : null
+        }
+        </Body>
       </HashRouter>
     );
   }
 }
+
+export default App = connect(
+  (state) => ({
+    meta: state.meta,
+    loaded: state.sections.loaded
+  }),
+  {
+    fetchSections
+  }
+)(App);

@@ -1,15 +1,23 @@
 import React from 'react';
-import GoRust from "../GoRust";
-import BasicGit from "../BasicGit";
-import Body from "../Body";
+import SectionBlock from '../SectionBlock';
+import {connect} from "react-redux";
 
-export default class Landing extends React.Component {
+class Landing extends React.Component {
   render() {
+    const {sections} = this.props;
+
     return (
-      <Body>
-        <GoRust/>
-        <BasicGit/>
-      </Body>
+      <div>
+        {sections.map((section, i) =>
+          <SectionBlock section={section} key={i}/>
+        )}
+      </div>
     )
   }
 }
+
+export default Landing = connect(
+  (state) => ({
+    sections: state.sections.all,
+  })
+)(Landing)

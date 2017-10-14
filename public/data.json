@@ -1,0 +1,54 @@
+{
+  "title": "Marcelo Jara Almeyda",
+  "subtext": "Documentos y otros",
+  "sections": [
+    {
+      "name": "Introducción a Go y Rust",
+      "slug": "gorust",
+      "entries": [
+        {
+          "title": "Ejemplo Tarea en Docker",
+          "text": "Ir al Documento",
+          "link": "self:///d/ejemplo-tarea-docker",
+          "img": "//labcomp.cl/~mijara/media/ejemplo-thumbnail.png"
+        },
+        {
+          "title": "Ejemplo Interfaces",
+          "text": "Ir al Gist",
+          "link": "https://gist.github.com/mijara/9e620f6041f82d98c43f14392d591012",
+          "img": "//labcomp.cl/~mijara/media/gorust-interfaces-thumbnail.png"
+        },
+        {
+          "title": "Tarea 1 - GG",
+          "text": "Descargar Enunciado",
+          "link": "//labcomp.cl/~mijara/media/tarea1-gg.pdf",
+          "img": "//labcomp.cl/~mijara/media/tarea1-gg-thumbnail.png"
+        },
+        {
+          "title": "Ejemplo - Servidor",
+          "text": "Ir al Repositorio",
+          "link": "https://github.com/mijara/gorust-goserver",
+          "img": "//labcomp.cl/~mijara/media/ejemplo-thumbnail.png"
+        },
+        {
+          "title": "Tour de Go",
+          "text": "Ir al Material",
+          "link": "https://tour.golang.org",
+          "img": "//labcomp.cl/~mijara/media/tourgo-thumbnail.png"
+        }
+      ]
+    },
+    {
+      "name": "Git Básico",
+      "slug": "basicgit",
+      "entries": [
+        {
+          "title": "Guía Básica de BasicGit",
+          "text": "Descargar Presentación",
+          "link": "//labcomp.cl/~mijara/media/basic-git.pdf",
+          "img": "//labcomp.cl/~mijara/media/git-thumbnail.png"
+        }
+      ]
+    }
+  ]
+}
