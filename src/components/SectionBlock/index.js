@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Row, Col, Card, CardImg, CardBody, CardTitle} from 'reactstrap';
 import {parseLink} from "../App";
@@ -19,23 +19,49 @@ const ItemCard = ({title, text, link, img}) =>
     </Card>
   </Col>;
 
-const SectionBlock = ({section}) =>
-  <section>
-    <Row>
-      <Col lg={12}>
-        <h4>
-          {section.name}
-          {' '}
-          <Link to={`/s/${section.slug}`} style={{marginLeft: 16}}>&#8663;</Link>
-        </h4>
-      </Col>
-    </Row>
+class SectionBlock extends Component {
+  constructor(props) {
+    super(props);
 
-    <Row>
-      {section.entries.map((v, i) => <ItemCard {...v} key={i}/>)}
-    </Row>
+    this.state = {
+      collapse: false
+    }
+  }
 
-    <hr/>
-  </section>;
+  collapseToggleHandle() {
+    this.setState({
+      collapse: !this.state.collapse,
+    })
+  }
+
+  render() {
+    const {section} = this.props;
+
+    return (
+      <section>
+        <Row>
+          <Col lg={12}>
+            <h4>
+              <button onClick={this.collapseToggleHandle.bind(this)}
+                      className="btn btn-light btn-sm"
+                      style={{cursor: 'pointer'}}>
+                <i className={`fa fa-${this.state.collapse ? 'plus' : 'minus'}`}/></button>
+              {' '}
+              {section.name}
+              {' '}
+              <Link to={`/s/${section.slug}`} style={{marginLeft: 16}}>&#8663;</Link>
+            </h4>
+          </Col>
+        </Row>
+
+        <Row>
+          {this.state.collapse ? null : section.entries.map((v, i) => <ItemCard {...v} key={i}/>)}
+        </Row>
+
+        <hr style={{marginTop: 6}}/>
+      </section>
+    )
+  }
+}
 
 export default SectionBlock;

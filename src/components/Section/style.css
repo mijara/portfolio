@@ -1,3 +1,9 @@
 .Section-card {
-    margin-bottom: 8px !important;
+    margin-bottom: 16px !important;
+}
+.Section-card .card-title {
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

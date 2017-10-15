@@ -1,7 +1,8 @@
 .Document-content {
     text-align: justify;
-    font-size: 18px;
-    font-family: "Georgia", sans-serif;
+    font-family: "Crimson Text", sans-serif;
+    font-size: 20px;
+    margin-bottom: 32px;
 }
 
 .Document-content h1,
