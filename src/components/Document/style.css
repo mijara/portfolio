@@ -1,0 +1,20 @@
+.Document-content {
+    text-align: justify;
+    font-size: 18px;
+    font-family: "Georgia", sans-serif;
+}
+
+.Document-content h1,
+.Document-content h2,
+.Document-content h3,
+.Document-content h4,
+.Document-content h5,
+.Document-content h6 {
+    font-family: "Raleway", sans-serif;
+}
+.Document-content h1 {
+    font-weight: bold;
+    border-bottom: 1px #eaeaea solid;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}

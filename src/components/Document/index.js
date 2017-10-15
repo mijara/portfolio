@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './style.css';
 
 class Document extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Document extends Component {
 
   render() {
     return (
-      <section dangerouslySetInnerHTML={{
+      <section className="Document-content" dangerouslySetInnerHTML={{
         __html: this.state.content
       }}/>
     )
