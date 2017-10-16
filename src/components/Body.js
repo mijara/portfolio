@@ -2,13 +2,25 @@ import React from "react";
 import {Container} from "reactstrap";
 import Navbar from "./Navbar/index";
 
-const Body = ({title, subtext, hometext, children}) =>
-  <div>
-    <Navbar title={title} subtext={subtext} hometext={hometext}/>
+class Body extends React.Component {
+  componentDidUpdate() {
+    const {title} = this.props;
+    document.title = title;
+  }
 
-    <Container>
-      {children}
-    </Container>
-  </div>;
+  render() {
+    const {title, subtext, hometext, children} = this.props;
+
+    return (
+      <div>
+        <Navbar title={title} subtext={subtext} hometext={hometext}/>
+
+        <Container>
+          {children}
+        </Container>
+      </div>
+    )
+  }
+}
 
 export default Body;

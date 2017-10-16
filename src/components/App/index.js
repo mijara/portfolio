@@ -16,7 +16,7 @@ export const parseLink = (link) => {
 };
 
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchSections();
   }
 
