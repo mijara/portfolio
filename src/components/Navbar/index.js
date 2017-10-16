@@ -3,7 +3,7 @@ import {Col, Container, Row} from "reactstrap";
 import './style.css';
 import {Link} from "react-router-dom";
 
-const Navbar = ({title, subtext}) =>
+const Navbar = ({title, subtext, hometext}) =>
   <div style={{backgroundColor: '#fafafa'}}>
     <Container className="Navbar-container">
       <Row>
@@ -11,7 +11,7 @@ const Navbar = ({title, subtext}) =>
           <h2>{title}</h2>
 
           <strong>
-            <Link to="/">Inicio</Link>
+            <Link to="/">{hometext}</Link>
           </strong>
           {' '} | {' '}
 

@@ -25,7 +25,7 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <Body title={meta.title} subtext={meta.subtext}>
+        <Body {...meta}>
         {
           this.props.loaded ?
             <Switch>
