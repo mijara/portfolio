@@ -41,9 +41,10 @@
     {
       "name": "Git Básico",
       "slug": "basicgit",
+      "version": "overlays",
       "entries": [
         {
-          "title": "Guía Básica de BasicGit",
+          "title": "Guía Básica de Git",
           "text": "Descargar Presentación",
           "link": "//labcomp.cl/~mijara/media/basic-git.pdf",
           "img": "//labcomp.cl/~mijara/media/git-thumbnail.png"

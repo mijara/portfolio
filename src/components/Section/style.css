@@ -7,3 +7,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.Section-card-overlay {
+}
+.Section-card-overlay .card-img-overlay {
+    background: linear-gradient(transparent, transparent, transparent, rgba(100, 100, 100, 0.75), rgba(0, 0, 0, 0.75));
+    transition: 0.5s;
+    border: 0;
+    color: #fff;
+}
+.Section-card-overlay:hover .card-img-overlay {
+    background: linear-gradient(transparent, transparent, transparent, rgba(100, 100, 100, 0.5), rgba(0, 0, 0, 0.5));
+}
