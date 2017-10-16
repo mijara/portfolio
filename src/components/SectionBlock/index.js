@@ -26,7 +26,8 @@ const ItemCardOverlay = ({title, text, link, img}) =>
         <CardImg src={img} overlay/>
         <CardImgOverlay>
           <div style={{position: 'absolute', bottom: 10}}>
-            <span style={{backgroundColor: '#50abff', padding: 3, borderRadius: 3, fontSize: 12}}>{text}</span>
+            <span style={{backgroundColor: '#50abff',
+              padding: 3, borderRadius: 3, fontSize: 12}}>{text}</span>
             <CardTitle>
               {title}
             </CardTitle>
@@ -74,7 +75,7 @@ class SectionBlock extends Component {
         <Row>
           {
             this.state.collapse ? null : section.entries.map((v, i) =>
-                section.version == 'overlays' ?
+                section.version === 'overlays' ?
                   <ItemCardOverlay {...v} key={i}/> :
                   <ItemCard {...v} key={i}/>
               )
